@@ -19,17 +19,17 @@ class DevicePortCount:
             utils = Utilities(interface_data)
             port_grouping = utils.CheckPortSpeed()
             returned_data = utils.Port_Group_Func(port_grouping)
-            # try:
-            #     device_data = test_connection.get_facts()
-            #     print(device_data)
-            # except:
-            #     raise ValueError('An error has occured Please try again')
-            # os_ver = device_data['os_version']
-            # hw_model = device_data["model"]
-            # get_hostname = device_data["hostname"]
-            # list_os_data = os_ver.split(',')
-            # list_os_data = list_os_data[1]
-            # get_hostname, list_os_data, hw_model,
+            try:
+                device_data = test_connection.get_facts()
+                print(device_data)
+            except:
+                raise ValueError('An error has occured Please try again')
+            os_ver = device_data['os_version']
+            hw_model = device_data["model"]
+            get_hostname = device_data["hostname"]
+            list_os_data = os_ver.split(',')
+            list_os_data = list_os_data[1]
+            get_hostname, list_os_data, hw_model,
             return  returned_data, 
         except AssertionError as error:
             print(error)
